@@ -98,7 +98,7 @@ if view == "Variant → Sample Lookup":
 # ===================================================================
 elif view == "Gene Summary":
     st.subheader("Gene-Level Summary")
-
+    total_samples = df["normalized_sample_name"].nunique()
     genes = sorted(df["gene_symbol"].dropna().unique())
     gene = st.selectbox("Select Gene", genes)
     df_gene = df[df["gene_symbol"] == gene]
